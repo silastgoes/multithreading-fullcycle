@@ -22,8 +22,10 @@ func main() {
 
 	select {
 	case address := <-viacep:
+		fmt.Println("Endereço recuperado da https://brasilapi.com.br")
 		fmt.Println(address)
 	case address := <-brasilapi:
+		fmt.Println("Endereço recuperado da https://viacep.com.br")
 		fmt.Println(address)
 	case <-time.After(time.Second):
 		fmt.Println("TimeOut")
